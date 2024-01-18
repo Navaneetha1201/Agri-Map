@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>INDIA</title>
+
+    <script src="mapdata.js"></script>
+
+    <script src="countrymap.js"></script>
+
+    <style>/* DEMO.CSS */ 
+
+body {
+
+ background: #323232;
+
+font-family: 'Lato', sans-serif;
+
+ font-size: 16px;
+
+ color: #eee;
+
+ overflow-x: hidden;
+
+}
+
+a {
+
+ color: #74e685;
+
+ text-decoration: none;
+
+ -webkit-transition: 0.15s color ease;
+
+    -moz-transition: 0.15s color ease;
+
+     -ms-transition: 0.15s color ease;
+
+      -o-transition: 0.15s color ease;
+
+         transition: 0.15s color ease;
+
+}
+
+ a:hover {
+
+  color: #d3f3d7;
+
+ }
+
+h1, h2 {
+
+ font-size: 24px;
+
+ display: inline-block;
+
+}
+
+h2 {
+
+ color: #ccc;
+
+}
+
+p {
+
+ margin: 10px 0 10px 0;
+
+ font-size: 15px;
+
+}
+
+small {
+
+ display: block;
+
+ margin: 10px 0 20px 0;
+
+ color: #bbb;
+
+}
+
+del {
+
+ opacity: 0.3;
+
+}
+
+.sharing {
+
+ position: absolute;
+
+ bottom: 16px;
+
+ left: 20px;
+
+}
+
+.forkit-curtain {
+
+ text-align: center;
+
+ background: rgba( 0, 0, 0, 0.8 );
+
+ padding-top: 10%;
+
+}
+
+ .forkit-curtain .close-button {
+
+  position: absolute;
+
+  width: 32px;
+
+  height: 32px;
+
+  right: 20px;
+
+  top: 20px;
+
+  cursor: pointer;
+
+  background: url(data:image/gif;base64,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);
+
+ }
+
+/* demo2.css */
+
+* {
+
+ margin: 0px;
+
+ padding: 0px;
+
+ -webkit-box-sizing: border-box;
+
+    -moz-box-sizing: border-box;
+
+         box-sizing: border-box;
+
+}
+
+.forkit {
+
+ position: fixed;
+
+ right: 0;
+
+ top: 0;
+
+ width: 300px;
+
+ height: 250px;
+
+ font-family: 'Lato', sans-serif;
+
+ text-decoration: none;
+
+}
+
+ .forkit .tag {
+
+  display: block;
+
+  height: 30px;
+
+  width: 300px;
+
+  color: #fff;
+
+  background: #257b15;
+
+  text-align: center;
+
+  font-size: 33px;
+
+  font-weight: bold;
+
+  line-height: 30px;
+
+  box-shadow: 0px 0px 30px rgba( 0, 0, 0, 0.4 );
+
+  -webkit-transform-origin: 15px 0px;
+
+     -moz-transform-origin: 15px 0px;
+
+      -ms-transform-origin: 15px 0px;
+
+       -o-transform-origin: 15px 0px;
+
+          transform-origin: 15px 0px;
+
+ }
+
+ .forkit .tag:after {
+
+  content: '';
+
+  display: block;
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 196px;
+
+  height: 26px;
+
+  margin: 1px;
+
+  border: 1px solid rgba( 255, 255, 255, 0.4 );
+
+ }
+
+ .forkit .string {
+
+  display: block;
+
+  height: 1px;
+
+  width: 0px;
+
+  position: absolute;
+
+  background: rgba( 255, 255, 255, 0.7 );
+
+  box-shadow: 0px 0px 10px rgba( 0, 0, 0, 0.4 );
+
+  -webkit-transform-origin: 0px 0px;
+
+     -moz-transform-origin: 0px 0px;
+
+      -ms-transform-origin: 0px 0px;
+
+       -o-transform-origin: 0px 0px;
+
+          transform-origin: 0px 0px;
+
+ }
+
+.forkit-curtain {
+
+ position: fixed;
+
+ width: 100%;
+
+ height: 100%;
+
+ top: -100%;
+
+}
+
+       .container{
+
+   width: 100%;
+
+   height: 100%;
+
+   margin: 0;
+
+  }
+
+</style>
+
+  </head>
+
+  <body style=" font-family: 'Lato', sans-serif; background-image:url('https://tse1.mm.bing.net/th?id=OIP.8NrZM-F7CY5cN_PQMVwXpwHaE8&pid=Api&P=0'); background-repeat: no-repeat;background-size: 1000px 2000px;">
+
+  <br><br><br>
+
+  <center><b><h1 style="color:#d1f1cb; margin-top:150px; font-size:40px;">Agricultural Status of India</h1> </b></center>
+
+ <br><br><br><br><br><br>
+
+    <div id="map"></div>
+
+    
+
+    
+
+    
+
+     <meta name="description" content="A playful JavaScript+CSS ribbon">
+
+  <meta name="author" content="Hakim El Hattab">
+
+ <br><br><br><br>
+
+  
+
+	  <div class="forkit-curtain">
+
+      <div class="close-button"></div>
+
+ <br><br><br><br><br><br><br><br><br>
+
+ <small> <ol style="text-align:left; font-size:40px;">
+
+<li>1) Click on the state in which you want to know the details of agricultural products</li> <br>
+
+<li>2) You will find the most growing crops in the chosen state in which the most popular agri products will be displayed </li><br>
+
+<li>3) You may also view the virtual images of the most famous products of the state by clicking on those pictures</li><br>
+
+ <li>4) This market will provide you the complete understanding and analysis of the India's state wise agri products
+
+ </li><br>
+
+ <li>5) You may like the products which you feel better and you may also buy the famous products of the state by clicking the 'Buy' button</li>
+
+    </ol></small>
+
+  </div>
+
+  <!-- The ribbon -->
+
+  <a class="forkit" data-text="Instructions" data-text-detached="Drag down >" href="https://github.com/hakimel/forkit.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <script>/* forkit js */
+
+/*!
+
+ * forkit.js 0.2
+
+ * http://lab.hakim.se/forkit-js
+
+ * MIT licensed
+
+ *
+
+ * Created by Hakim El Hattab, http://hakim.se
+
+ */
+
+(function(){
+
+ var STATE_CLOSED = 0,
+
+  STATE_DETACHED = 1,
+
+  STATE_OPENED = 2,
+
+  TAG_HEIGHT = 30,
+
+  TAG_WIDTH = 200,
+
+  MAX_STRAIN = 40,
+
+  // Factor of page height that needs to be dragged for the
+
+  // curtain to fall
+
+  DRAG_THRESHOLD = 0.36;
+
+  VENDORS = [ 'Webkit', 'Moz', 'O', 'ms' ];
+
+ var dom = {
+
+   ribbon: null,
+
+   ribbonString: null,
+
+   ribbonTag: null,
+
+   curtain: null,
+
+   closeButton: null
+
+  },
+
+  // The current state of the ribbon
+
+  state = STATE_CLOSED,
+
+  // Ribbon text, correlates to states
+
+  closedText = '',
+
+  detachedText = '',
+
+  friction = 1.04;
+
+  gravity = 1.5,
+
+  // Resting position of the ribbon when curtain is closed
+
+  closedX = TAG_WIDTH * 0.4,
+
+  closedY = -TAG_HEIGHT * 0.5,
+
+  // Resting position of the ribbon when curtain is opened
+
+  openedX = TAG_WIDTH * 0.4,
+
+  openedY = TAG_HEIGHT,
+
+  velocity = 0,
+
+  rotation = 45,
+
+  curtainTargetY = 0,
+
+  curtainCurrentY = 0,
+
+  dragging = false,
+
+  dragTime = 0,
+
+  dragY = 0,
+
+  anchorA = new Point( closedX, closedY ),
+
+  anchorB = new Point( closedX, closedY ),
+
+  mouse = new Point();
+
+ function initialize() {
+
+  dom.ribbon = document.querySelector( '.forkit' );
+
+  dom.curtain = document.querySelector( '.forkit-curtain' );
+
+  dom.closeButton = document.querySelector( '.forkit-curtain .close-button' );
+
+  if( dom.ribbon ) {
+
+   // Fetch label texts from DOM
+
+   closedText = dom.ribbon.getAttribute( 'data-text' ) || '';
+
+   detachedText = dom.ribbon.getAttribute( 'data-text-detached' ) || closedText;
+
+   // Construct the sub-elements required to represent the
+
+   // tag and string that it hangs from
+
+   dom.ribbon.innerHTML = '<span class="string"></span><span class="tag">' + closedText + '</span>';
+
+   dom.ribbonString = dom.ribbon.querySelector( '.string' );
+
+   dom.ribbonTag = dom.ribbon.querySelector( '.tag' );
+
+   // Bind events
+
+   dom.ribbon.addEventListener( 'click', onRibbonClick, false );
+
+   document.addEventListener( 'mousemove', onMouseMove, false );
+
+   document.addEventListener( 'mousedown', onMouseDown, false );
+
+   document.addEventListener( 'mouseup', onMouseUp, false );
+
+   document.addEventListener( 'touchstart', onTouchStart, false);
+
+   document.addEventListener( 'touchmove', onTouchMove, false);
+
+   document.addEventListener( 'touchend', onTouchEnd, false);
+
+   window.addEventListener( 'resize', layout, false );
+
+   if( dom.closeButton ) {
+
+    dom.closeButton.addEventListener( 'click', onCloseClick, false );
+
+   }
+
+   // Start the animation loop
+
+   animate();
+
+  }
+
+ }
+
+ function onMouseDown( event ) {
+
+  if( dom.curtain && state === STATE_DETACHED ) {
+
+   event.preventDefault();
+
+   dragY = event.clientY;
+
+   dragTime = Date.now();
+
+   dragging = true;
+
+  }
+
+ }
+
+ function onMouseMove( event ) {
+
+  mouse.x = event.clientX;
+
+  mouse.y = event.clientY;
+
+ }
+
+ function onMouseUp( event ) {
+
+  if( state !== STATE_OPENED ) {
+
+   state = STATE_CLOSED;
+
+   dragging = false;
+
+  }
+
+ }
+
+ function onTouchStart( event ) {
+
+  if( dom.curtain && state === STATE_DETACHED ) {
+
+   event.preventDefault();
+
+   var touch = event.touches[0];
+
+   dragY = touch.clientY;
+
+   dragTime = Date.now();
+
+   dragging = true;
+
+  }
+
+ }
+
+ function onTouchMove( event ) {
+
+  var touch = event.touches[0];
+
+  mouse.x = touch.pageX;
+
+  mouse.y = touch.pageY;
+
+ }
+
+ function onTouchEnd( event ) {
+
+  if( state !== STATE_OPENED ) {
+
+   state = STATE_CLOSED;
+
+   dragging = false;
+
+  }
+
+ }
+
+ function onRibbonClick( event ) {
+
+  if( dom.curtain ) {
+
+   event.preventDefault();
+
+   if( state === STATE_OPENED ) {
+
+    close();
+
+   }
+
+   else if( Date.now() - dragTime < 300 ) {
+
+    open();
+
+   }
+
+  }
+
+ }
+
+ function onCloseClick( event ) {
+
+  event.preventDefault();
+
+  close();
+
+ }
+
+ function layout() {
+
+  if( state === STATE_OPENED ) {
+
+   curtainTargetY = window.innerHeight;
+
+   curtainCurrentY = curtainTargetY;
+
+  }
+
+ }
+
+ function open() {
+
+  dragging = false;
+
+  state = STATE_OPENED;
+
+  dispatchEvent( 'forkit-open' );
+
+ }
+
+ function close() {
+
+  dragging = false;
+
+  state = STATE_CLOSED;
+
+  dom.ribbonTag.innerHTML = closedText;
+
+  dispatchEvent( 'forkit-close' );
+
+ }
+
+ function detach() {
+
+  state = STATE_DETACHED;
+
+  dom.ribbonTag.innerHTML = detachedText;
+
+ }
+
+ function animate() {
+
+  update();
+
+  render();
+
+  requestAnimFrame( animate );
+
+ }
+
+ function update() {
+
+  // Distance between mouse and top right corner
+
+  var distance = distanceBetween( mouse.x, mouse.y, window.innerWidth, 0 );
+
+  // If we're OPENED the curtainTargetY should ease towards page bottom
+
+  if( state === STATE_OPENED ) {
+
+   curtainTargetY = Math.min( curtainTargetY + ( window.innerHeight - curtainTargetY ) * 0.2, window.innerHeight );
+
+  }
+
+  else {
+
+   // Detach the tag when hovering close enough
+
+   if( distance < TAG_WIDTH * 1.5 ) {
+
+    detach();
+
+   }
+
+   // Re-attach the tag if the user moved away
+
+   else if( !dragging && state === STATE_DETACHED && distance > TAG_WIDTH * 2 ) {
+
+    close();
+
+   }
+
+   if( dragging ) {
+
+    // Updat the curtain position while dragging
+
+    curtainTargetY = Math.max( mouse.y - dragY, 0 );
+
+    // If the threshold is crossed, open the curtain
+
+    if( curtainTargetY > window.innerHeight * DRAG_THRESHOLD ) {
+
+     open();
+
+    }
+
+   }
+
+   else {
+
+    curtainTargetY *= 0.8;
+
+   }
+
+  }
+
+  // Ease towards the target position of the curtain
+
+  curtainCurrentY += ( curtainTargetY - curtainCurrentY ) * 0.3;
+
+  // If we're dragging or detached we need to simulate
+
+  // the physical behavior of the ribbon
+
+  if( dragging || state === STATE_DETACHED ) {
+
+   // Apply forces
+
+   velocity /= friction;
+
+   velocity += gravity;
+
+   var containerOffsetX = dom.ribbon.offsetLeft;
+
+   var offsetX = Math.max( ( ( mouse.x - containerOffsetX ) - closedX ) * 0.2, -MAX_STRAIN );
+
+   anchorB.x += ( ( closedX + offsetX ) - anchorB.x ) * 0.1;
+
+   anchorB.y += velocity;
+
+   var strain = distanceBetween( anchorA.x, anchorA.y, anchorB.x, anchorB.y );
+
+   if( strain > MAX_STRAIN ) {
+
+    velocity -= Math.abs( strain ) / ( MAX_STRAIN * 1.25 );
+
+   }
+
+   var dy = Math.max( mouse.y - anchorB.y, 0 ),
+
+    dx = mouse.x - ( containerOffsetX + anchorB.x );
+
+   // Angle the ribbon towards the mouse but limit it avoid extremes
+
+   var angle = Math.min( 130, Math.max( 50, Math.atan2( dy, dx ) * 180 / Math.PI ) );
+
+   rotation += ( angle - rotation ) * 0.1;
+
+  }
+
+  // Ease ribbon towards the OPENED state
+
+  else if( state === STATE_OPENED ) {
+
+   anchorB.x += ( openedX - anchorB.x ) * 0.2;
+
+   anchorB.y += ( openedY - anchorB.y ) * 0.2;
+
+   rotation += ( 90 - rotation ) * 0.02;
+
+  }
+
+  // Ease ribbon towards the CLOSED state
+
+  else {
+
+   anchorB.x += ( anchorA.x - anchorB.x ) * 0.2;
+
+   anchorB.y += ( anchorA.y - anchorB.y ) * 0.2;
+
+   rotation += ( 45 - rotation ) * 0.2;
+
+  }
+
+ }
+
+ function render() {
+
+  if( dom.curtain ) {
+
+   dom.curtain.style.top = - 100 + Math.min( ( curtainCurrentY / window.innerHeight ) * 100, 100 ) + '%';
+
+  }
+
+  dom.ribbon.style[ prefix( 'transform' ) ] = transform( 0, curtainCurrentY, 0 );
+
+  dom.ribbonTag.style[ prefix( 'transform' ) ] = transform( anchorB.x, anchorB.y, rotation );
+
+  var dy = anchorB.y - anchorA.y,
+
+   dx = anchorB.x - anchorA.x;
+
+  var angle = Math.atan2( dy, dx ) * 180 / Math.PI;
+
+  dom.ribbonString.style.width = anchorB.y + 'px';
+
+  dom.ribbonString.style[ prefix( 'transform' ) ] = transform( anchorA.x, 0, angle );
+
+ }
+
+ function prefix( property, el ) {
+
+  var propertyUC = property.slice( 0, 1 ).toUpperCase() + property.slice( 1 );
+
+  for( var i = 0, len = VENDORS.length; i < len; i++ ) {
+
+   var vendor = VENDORS[i];
+
+   if( typeof ( el || document.body ).style[ vendor + propertyUC ] !== 'undefined' ) {
+
+    return vendor + propertyUC;
+
+   }
+
+  }
+
+  return property;
+
+ }
+
+ function transform( x, y, r ) {
+
+  return 'translate('+x+'px,'+y+'px) rotate('+r+'deg)';
+
+ }
+
+ function distanceBetween( x1, y1, x2, y2 ) {
+
+  var dx = x1-x2;
+
+  var dy = y1-y2;
+
+  return Math.sqrt(dx*dx + dy*dy);
+
+ }
+
+ function dispatchEvent( type ) {
+
+  var event = document.createEvent( 'HTMLEvents', 1, 2 );
+
+  event.initEvent( type, true, true );
+
+  dom.ribbon.dispatchEvent( event );
+
+ }
+
+ /**
+
+  * Defines a 2D position.
+
+  */
+
+ function Point( x, y ) {
+
+  this.x = x || 0;
+
+  this.y = y || 0;
+
+ }
+
+ Point.prototype.distanceTo = function( x, y ) {
+
+  var dx = x-this.x;
+
+  var dy = y-this.y;
+
+  return Math.sqrt(dx*dx + dy*dy);
+
+ };
+
+ Point.prototype.clone = function() {
+
+  return new Point( this.x, this.y );
+
+ };
+
+ Point.prototype.interpolate = function( x, y, amp ) {
+
+  this.x += ( x - this.x ) * amp;
+
+  this.y += ( y - this.y ) * amp;
+
+ };
+
+ window.requestAnimFrame = (function(){
+
+  return window.requestAnimationFrame ||
+
+    window.webkitRequestAnimationFrame ||
+
+    window.mozRequestAnimationFrame ||
+
+    window.oRequestAnimationFrame ||
+
+    window.msRequestAnimationFrame ||
+
+    function( callback ){
+
+     window.setTimeout(callback, 1000 / 60);
+
+    };
+
+ })();
+
+ initialize();
+
+})();
+
+</script>
+
+      </body>
+
+</html>
