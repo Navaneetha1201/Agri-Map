@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated"><head><meta http-equiv="Content-Type" content="text/html;
+charset=UTF-8">
+<style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jammbu kashmir</title>
+
+
+
+<style>
+
+body {
+margin: 0;
+
+padding: 0;
+box-sizing: border-box;
+display: flex;
+justify-content: center;
+
+background-color: black;
+background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+
+}
+  .bor{
+    border: 9px solid rgb(5, 71, 6);
+}
+.scope {
+position: relative;
+width: 90px;
+height: 90px;
+transform-style: preserve-3d;
+animation: slid 30s linear infinite;
+top:15px;
+}
+
+.scope span {
+position: absolute;
+top: 70px;
+
+left: 0;
+width: 100%;
+height: 100%;
+transform-origin: center;
+transform-style: preserve-3d;
+transform: rotateY(calc(var(--i) * 45deg)) translateZ(170px);
+}
+
+.scope span img {
+position: absolute;
+top: 0px;
+left: 0;
+width: 100%;
+height: 100%;
+border-radius: 10px;
+object-fit: cover;
+transition: 2s;
+}
+.scope span:hover img {
+transform: translateY(-50px) scale(1.7);
+}
+@keyframes slid {
+0% {
+transform: perspective(400px) rotateY(0deg);
+}
+100% {
+transform: perspective(1000px) rotateY(360deg);
+}
+}
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap');
+body {
+
+font-family: 'Bodoni Moda', serif;
+}
+
+a {
+color:#333
+
+}
+
+.responsive-gallery { width: 80%; margin: 40px auto; color: #333; font-family: sans-serif; padding-top:100px; }
+
+@media only screen and (max-width: 960px) {
+.responsive-gallery { width: 95%; }
+}
+
+h1 { line-height: 24px; font-size: 24px; }
+h1 + p { line-height: 24px; font-size: 16px; }
+a { color: #333; text-decoration: none; border-bottom: 1px solid #ccc; }
+a:hover { color: #6b363e; border-bottom: 1px solid #6b363e; border-color: rgba(107,54,62,0.7); }
+.return { margin: 0 0 30px 0; font-size: 12px; }
+
+.lightbox a, .lightbox a:hover,
+.fancybox-overlay a, .fancybox-nav, .fancybox-close { border: 0; }
+
+.lightbox {text-align:center;}
+
+.image-thumb {
+position:relative; display:inline-block; margin:0 10px 10px 0;
+width: -moz-calc(33.333% - 20px); width: -webkit-calc(33.333% - 20px); width: calc(33.333% -
+20px); height:33.333%;
+}
+.image-thumb:nth-child(3n) { margin-right: 0; }
+
+.image-thumb a.fancybox,
+.image-thumb a.fancybox img { display: block; width: 100%; height: 100%; margin: 0; padding: 0; }
+
+.image-thumb .image-title {
+position: absolute; bottom: 0; left: 0;
+box-sizing: border-box; width: 100%; margin: 0; padding: 2% 0;
+color: #fff; background-color: #333; background-color: rgba(0,0,0,0.5);
+line-height: 16px; font-size: 12px; text-align: center;
+}
+
+.fancybox-title {
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+@media only screen and (max-width: 480px) {
+.image-thumb { width: 100%; height: auto; }
+}
+iframe{
+background-color:black;
+}
+.container,.neon-button-row,.front-page-section{
+display: flex;
+}
+
+.container{
+justify-content:center;
+}
+
+.front-page-section{
+margin:100px 0px 0px 0px;
+flex-direction:column;
+
+padding:2px 2px 40px 2px;
+}
+@property --degree { syntax: "<angle>"; inherits: false; initial-value: 0deg }
+
+* { box-sizing: border-box }
+html, body { height: 100%; margin: 0 }
+body { display: grid; place-items: center; background-color: #19102b; padding: 1rem }
+
+.diagram {
+width: min(30rem, 100%);
+display: grid;
+grid-template-columns: 1fr auto;
+column-gap: 1rem;
+}
+
+@media (width < 20rem ){
+.diagram { grid-template-columns: 1fr; place-items: center }
+}
+
+.diagram > .item { display: contents }
+
+/* diagram */
+.diagram > .item::after {
+content: "";
+grid-column: 1;
+place-self: center;
+grid-row: 1/calc(var(--items) + 1);
+width: 100%;
+aspect-ratio: 1;
+
+border-radius: 50%;
+pointer-events: none;
+
+--degree: calc(360deg * var(--perc));
+background-image:
+conic-gradient(
+from 0deg,
+var(--clr) var(--degree),
+transparent calc(var(--degree) + .25deg)
+);
+
+--width: calc(50% / (var(--items) + .5));
+--start: calc(var(--width) * .5 + var(--width) * var(--idx));
+--stop: calc(var(--start) + var(--width));
+--mask-image: radial-gradient(
+100% 100%,
+transparent 0 calc(var(--start) - 1px),
+black var(--start) var(--stop),
+transparent calc(var(--stop) + 1px)
+);
+-webkit-mask-image: var(--mask-image);
+mask-image: var(--mask-image);
+opacity: var(--opacity, 1);
+transition: opacity 250ms ease;
+animation: degreeIn 5s ease;
+}
+@keyframes degreeIn {
+from { --degree: 0deg }
+}
+
+/* label */
+.diagram > .item > label {
+display: flex;
+gap: 0.5rem;
+color: #ffffff;
+font-family: system-ui, sans-serif;
+align-items: center;
+padding-block: 0.5rem;
+}
+.diagram > .item > label::before {
+content: "▣";
+color: var(--clr)
+}
+
+/* hover */
+.diagram > .item:where(:hover,:focus) > label{
+color: var(--clr)
+}
+/* hover label, decrease opacity other items*/
+.diagram:has(>.item>label:where(:hover,:focus)) > .item:not(:where(:hover,:focus))::after{
+--opacity: 0.1
+}
+/* fallback rules that contain :has() */
+@supports not selector(:has(p)){
+.diagram:hover > :not(.item:where(:hover, :focus))::after { --opacity: 0.1 }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700&display=swap");
+.about {
+position: fixed;
+z-index: 10;
+bottom: 10px;
+right: 10px;
+width: 40px;
+height: 40px;
+display: flex;
+justify-content: flex-end;
+align-items: flex-end;
+transition: all 0.2s ease;
+}
+.about .bg_links {
+width: 40px;
+height: 40px;
+border-radius: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgba(0, 0, 0, 0.2);
+border-radius: 100%;
+backdrop-filter: blur(5px);
+position: absolute;
+}
+.about .logo {
+
+width: 40px;
+height: 40px;
+z-index: 9;
+background-image: url(https://rafaelavlucas.github.io/assets/codepen/logo_white.svg);
+background-size: 50%;
+background-repeat: no-repeat;
+background-position: 10px 7px;
+opacity: 0.9;
+transition: all 1s 0.2s ease;
+bottom: 0;
+right: 0;
+}
+.about .social {
+opacity: 0;
+right: 0;
+bottom: 0;
+}
+.about .social .icon {
+width: 100%;
+height: 100%;
+background-size: 20px;
+background-repeat: no-repeat;
+background-position: center;
+background-color: transparent;
+display: flex;
+transition: all 0.2s ease, background-color 0.4s ease;
+opacity: 0;
+border-radius: 100%;
+}
+
+.about .social.portfolio {
+transition: all 0.8s ease;
+}
+.about .social.portfolio .icon {
+background-image: url(https://rafaelavlucas.github.io/assets/codepen/link.svg);
+}
+.about .social.dribbble {
+transition: all 0.3s ease;
+}
+.about .social.dribbble .icon {
+background-image: url(https://rafaelavlucas.github.io/assets/codepen/link.svg);
+}
+.about .social.linkedin {
+transition: all 0.8s ease;
+}
+.about .social.linkedin .icon {
+background-image: url(https://rafaelavlucas.github.io/assets/codepen/link.svg);
+}
+.about:hover {
+width: 105px;
+height: 105px;
+transition: all 0.6s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+.about:hover .logo {
+opacity: 1;
+transition: all 0.6s ease;
+}
+.about:hover .social {
+opacity: 1;
+
+}
+.about:hover .social .icon {
+opacity: 0.9;
+}
+.about:hover .social:hover {
+background-size: 28px;
+}
+.about:hover .social:hover .icon {
+background-size: 65%;
+opacity: 1;
+}
+.about:hover .social.portfolio {
+right: 0;
+bottom: calc(100% - 40px);
+transition: all 0.3s 0s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+.about:hover .social.portfolio .icon:hover {
+background-color: #698fb7;
+}
+.about:hover .social.dribbble {
+bottom: 45%;
+right: 45%;
+transition: all 0.3s 0.15s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+.about:hover .social.dribbble .icon:hover {
+background-color: #ea4c89;
+}
+.about:hover .social.linkedin {
+bottom: 0;
+
+right: calc(100% - 40px);
+transition: all 0.3s 0.25s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+.about:hover .social.linkedin .icon:hover {
+background-color: #0077b5;
+}
+body {
+font-family: "Barlow", sans-serif;
+margin: 0;
+height: 100vh;
+display: grid;
+place-items: center;
+background-color: #dae4dd;
+}
+.cards {
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.cards .card {
+height: 440px;
+background: #fff;
+border-radius: 4px;
+box-shadow: 0px 20px 30px -10px rgba(0, 0, 0, 0.1);
+max-width: 300px;
+min-width: 260px;
+overflow: hidden;
+display: flex;
+
+justify-content: space-between;
+align-items: center;
+flex-direction: column;
+position: relative;
+transition: all 0.4s ease;
+margin: 0 10px;
+}
+.cards .card:before {
+height: 190px;
+width: calc(100% + 100px);
+content: "";
+position: absolute;
+background-image: linear-gradient(to top, #152f0c 0%, #5ad444 100%);
+border-radius: 4px 4px 100% 100%;
+transition: all 0.4s ease-out;
+top: 0;
+}
+.cards .card .close {
+width: 18px;
+height: 18px;
+position: absolute;
+z-index: 2;
+cursor: pointer;
+background-image: url("https://rafaelalvucas.github.io/assets/icons/misc/cross.svg");
+background-size: 80%;
+background-repeat: no-repeat;
+background-position: center;
+top: 0;
+right: 0;
+
+margin: 10px;
+padding: 5px;
+transition: all 0.2s ease;
+}
+.cards .card .close:hover {
+background-size: 100%;
+opacity: 0.8;
+}
+.cards .card .arrow {
+display: none;
+}
+.cards .card article {
+z-index: 1;
+display: flex;
+align-items: center;
+flex-direction: column;
+text-align: center;
+}
+.cards .card article h2 {
+color: white;
+margin: 0;
+padding: 40px 20px 10px 20px;
+font-weight: 500;
+font-size: 24px;
+letter-spacing: 0.5px;
+}
+.cards .card article .title {
+color: white;
+padding: 10px 20px;
+
+letter-spacing: 0.8px;
+transition: all 0.4s ease;
+}
+.cards .card article .desc {
+padding: 10px 30px;
+font-size: 14px;
+text-align: center;
+line-height: 24px;
+color: #666;
+height: 90px;
+transition: all 0.4s ease-out;
+}
+.cards .card article .pic {
+width: 120px;
+height: 120px;
+overflow: hidden;
+border-radius: 100%;
+margin: 20px 0;
+box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.3);
+transition: all 0.6s ease;
+}
+.cards .card article .pic img {
+width: 100%;
+-webkit-filter: grayscale(100%);
+filter: grayscale(100%);
+}
+.cards .card .actions {
+width: 100%;
+display: flex;
+
+justify-content: space-between;
+background: white;
+z-index: 1;
+}
+.cards .card .actions .btn {
+border: 0;
+background-color: transparent;
+box-sizing: border-box;
+width: calc(50% - 1px);
+height: 36px;
+margin: 0;
+text-transform: uppercase;
+font-size: 10px;
+transition: all 0.6s ease-in-out;
+cursor: pointer;
+color: #4481eb;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: 500;
+font-family: "Barlow", sans-serif;
+letter-spacing: 0.5px;
+background: rgba(68, 129, 235, 0.08);
+}
+.cards .card .actions .btn span {
+z-index: 1;
+opacity: 1;
+transition: all 0.4s ease-in-out;
+
+}
+.cards .card .actions .btn .icon {
+width: 10px;
+opacity: 0;
+position: absolute;
+transition: all 0.2s ease-in-out;
+}
+.cards .card .actions .btn:before {
+content: "";
+width: 100%;
+height: 0%;
+position: absolute;
+background: #4481eb;
+transition: all 0.4s ease;
+bottom: 0;
+opacity: 0.2;
+}
+.cards .card .actions .btn:focus {
+outline: 0;
+}
+.cards .card .actions .btn:hover {
+background-color: rgba(255, 255, 255, 0.5);
+}
+.cards .card .actions .btn:hover span {
+opacity: 0;
+transition: all 0.3s ease-in-out;
+}
+.cards .card .actions .btn:hover .icon {
+width: 22px;
+
+opacity: 1;
+transition: all 0.4s ease-in-out;
+}
+.cards .card .actions .btn:hover:nth-child(3) .icon {
+width: 18px;
+}
+.cards .card .actions .btn:hover:before {
+height: 100%;
+}
+.cards .card .actions .btn.clicked span {
+display: none;
+}
+.cards .card .actions .btn.clicked .icon {
+width: 22px;
+opacity: 1;
+animation: icon 0.5s ease forwards;
+}
+@keyframes icon {
+0% {
+width: 22px;
+}
+50% {
+width: 40px;
+}
+100% {
+width: 22px;
+}
+}
+.cards .card .actions .btn.clicked:before {
+
+opacity: 0.3;
+height: 100%;
+}
+.cards .card:hover {
+transform: translateY(-10px);
+box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.3);
+}
+.cards .card:hover:before {
+height: 100%;
+border-radius: 4px;
+}
+.cards .card:hover .desc {
+color: white;
+}
+.cards .card:hover .pic {
+box-shadow: 0px 0px 0px 8px rgba(255, 255, 255, 0.3);
+}
+.cards .card:hover .pic img {
+-webkit-filter: grayscale(0%);
+filter: grayscale(0%);
+}
+.cards .card.closed {
+min-width: 120px;
+max-width: 120px;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: all 0.6s ease;
+cursor: pointer;
+
+}
+.cards .card.closed .title, .cards .card.closed .desc, .cards .card.closed .actions, .cards .card.closed .close
+{
+display: none;
+}
+.cards .card.closed h2 {
+padding: 0;
+height: 100%;
+transform: rotate(-90deg);
+width: 440px;
+z-index: 2;
+transition: all 0.6s ease;
+}
+.cards .card.closed .pic {
+border-radius: 100%;
+height: 400px;
+width: 400px;
+position: absolute;
+top: -20px;
+margin: 0;
+box-shadow: 0;
+transition: all 0.6s ease;
+}
+.cards .card.closed .pic img {
+object-fit: cover;
+height: 100%;
+transform: translateY(20px);
+}
+.cards .card.closed .pic:before {
+
+content: "";
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: black;
+opacity: 0.5;
+z-index: 1;
+transition: all 0.4s ease;
+transform: translateY(20px);
+}
+.cards .card.closed:before {
+height: 100%;
+border-radius: 4px;
+}
+.cards .card.closed .arrow {
+width: 18px;
+height: 18px;
+position: absolute;
+z-index: 2;
+cursor: pointer;
+bottom: 15px;
+padding: 5px;
+display: flex;
+justify-content: center;
+background-image: url("https://rafaelavlucas.github.io/assets/icons/misc/expand.svg");
+background-size: 80%;
+background-repeat: no-repeat;
+background-position: center;
+transition: all 0.2s ease;
+
+}
+.cards .card.closed:hover .arrow {
+background-size: 100%;
+opacity: 0.6;
+}
+
+</style>
+</head>
+<body>
+
+<center>
+  <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <br>
+<h2>Agriculture of the State</h2>
+<br>
+<div class="scope">
+    <span style="--i:1;"><img src="https://farmech.dac.gov.in/FarmerGuide/JK/jm.jpg" alt="not found"></span>
+<span style="--i:2;"><img src="https://cdn.s3waas.gov.in/s3f4b9ec30ad9f68f89b29639786cb62ef/uploads/bfi_thumb/2018112420-olwdmtxlf0ixg5mrmkyyz1ky7h75vtqae6dzepi7be.jpg"></span>
+<span style="--i:3;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoE9LpIbylRe075lCpTLGvzxIp-ihc6tQI9A&usqp=CAU"></span>
+<span style="--i:4;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKFDL60Vlx65MjkkesxoydIFCD1vnsOhQ6tA&usqp=CAU" alt="not
+found"></span>
+<span style="--i:5;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWyXlPyWfXNoixY7nW_Ap3djV1jwNetAwhEg&usqp=CAU" alt="not
+found"></span>
+<span style="--i:6;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1X8t-jC67GumKkL33LZfc91Qf7hvFUgnwHw&usqp=CAU"></span>
+<span style="--i:7;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3_rOedXM27YNFdr4MK9Crl-JGtEICQMKUjA&usqp=CAU" alt="not
+found"></span>
+<span style="--i:8;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdyQgqxVPSHZcFHCrYBo8zsS-M8xJAQZwV2A&usqp=CAU"></span>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<h2>Analysis of Crops</h2>
+<br>
+<div class="diagram" style="--items: 5">
+<div class="item" style="--idx: 0; --perc: .98; --clr: #f1566f">
+<label style="color:black;">Walnut: 98%</label>
+</div>
+<div class="item" style="--idx: 1; --perc: .91; --clr: #ff9650">
+<label style="color:black;">Almond: 91.2%</label>
+</div>
+<div class="item" style="--idx: 2; --perc: .25; --clr: #fae250">
+<label style="color:black;">Rice : 25%</label>
+</div>
+<div class="item" style="--idx: 3; --perc: .08; --clr: #00bb6d">
+<label style="color:black;">Saffron: 8.72%</label>
+</div>
+<div class="item" style="--idx: 4; --perc: .30; --clr: #1b6ac6">
+<label style="color:black;">Tulip : 30%</label>
+</div>
+</div>
+<br>
+
+<br><br><br>
+
+<!-- about -->
+<div class="about">
+<a class="bg_links social portfolio" href="more info link" target="_blank">
+<span class="icon"></span>
+</a>
+
+<a class="bg_links social dribbble" href="more info link" target="_blank">
+<span class="icon"></span>
+</a>
+<a class="bg_links social linkedin" href="more info link" target="_blank">
+<span class="icon"></span>
+</a>
+<a class="bg_links logo"></a>
+</div>
+<!-- end about -->
+
+<h2>Product Details</h2>
+<br>
+<div class="cards">
+<div class="card">
+<span class="close"></span>
+<span class="arrow"></span>
+<article>
+<h2>Walnut</h2>
+<div class="title">Improve brain health and reduce your risk of heart disease and cancer.</div>
+<div class="pic"><img src="https://5.imimg.com/data5/HP/WX/GH/SELLER-26605812/walnuts-kernels-500x500.jpg"></div>
+
+<div class="desc">Walnut tree thrives in deep, sandy loam, well drained, irrigated and rich in organic matter soil.</div>
+
+</article>
+<div class="actions">
+<button class="btn"><span style="color:#267219">like</span><img class="icon"
+src="https://rafaelavlucas.github.io/assets/icons/misc/heart.svg"></button>
+<button  class="btn" ><a href="
+  
