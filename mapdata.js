@@ -303,14 +303,14 @@ var simplemaps_countrymap_mapdata={
       description: "West Bengal is predominantly an agrarian State. Comprising of only 2.7% of India's geographical area, it supports nearly 8% of its population. There are 71.23 lakh farm families of whom 96% are small and marginal farmers.",
       color: "#254117",
       hover_color: "default",
-      url: "http://westbengal.glitch.me/"
+      url: "http://westbengal.glitch.me"
     },
     "36": {
       name: "Jammu And Kashmir",
       description: "The Jammu and Kashmir State’s economy is predominately agriculture dependent and nearly 70% of population is directly or indirectly engaged in agricultural and allied occupations. ",
       color: "#E3F9A6",
       hover_color: "default",
-      url: "https://jammukashmir.glitch.me"
+      url: "Jammu.html"
     },
     "37": {
       name: "Telangana",
